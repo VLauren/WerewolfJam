@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WJRenderCam : MonoBehaviour
 {
+    public static WJRenderCam Instance { get; private set; }
+
     public const float OscSpeed = 0.1f;
 
     public enum CamType
@@ -16,11 +18,25 @@ public class WJRenderCam : MonoBehaviour
 
     public CamType Type;
 
+    void Awake()
+    {
+        if (Type == CamType.RIGHT)
+            Instance = this;
+    }
+
     void Update()
     {
         transform.position = WJChar.Instance.transform.position + Offset;
-
         transform.LookAt(WJChar.Instance.transform.position);
+
+        if (Type == CamType.RIGHT)
+        {
+            Vector3 dir = transform.forward;
+            Debug.DrawLine(transform.position, transform.position + dir * 30, Color.yellow);
+
+            dir = Quaternion.Euler(0, WJUtil.OscValue() * -120 + 60, 0) * dir;
+            Debug.DrawLine(transform.position, transform.position + dir * 30, Color.blue);
+        }
     }
 
 }
