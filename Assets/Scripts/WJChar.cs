@@ -13,6 +13,7 @@ public class WJChar : MonoBehaviour
     [SerializeField] float NightMovementSpeed;
     [SerializeField] float GravityAccel = -1;
     [SerializeField] float RotationSpeed = 360;
+    [SerializeField] ParticleSystem FXInvulnerability;
 
     [Space]
     [SerializeField] GameObject AttackArea;
@@ -154,6 +155,11 @@ public class WJChar : MonoBehaviour
     internal void StartInvul()
     {
         Invulnerable = true;
+        if (FXInvulnerability != null) {
+            FXInvulnerability.Play();
+        } else {
+            Debug.Log("No hay partículas de invulnerabilidad");
+        }
 
         // TODO representar visualmente
     }
@@ -161,7 +167,9 @@ public class WJChar : MonoBehaviour
     internal void StopInvul()
     {
         Invulnerable = false;
-
+    if (FXInvulnerability != null) {
+                FXInvulnerability.Stop();
+        }
         // TODO representar visualmente
     }
 

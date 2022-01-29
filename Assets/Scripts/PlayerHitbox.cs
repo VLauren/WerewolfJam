@@ -11,8 +11,6 @@ public class PlayerHitbox : MonoBehaviour
         if(other.GetComponent<WJEnemy>() != null)
         {
             other.GetComponent<WJEnemy>().ApplyDamage(Damage);
-
-            WJVisualFX.Effect(0, transform.position);
         }
     }
 }
