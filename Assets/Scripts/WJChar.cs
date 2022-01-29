@@ -11,6 +11,8 @@ public class WJChar : MonoBehaviour
 
     [SerializeField] float DayMovementSpeed;
     [SerializeField] float NightMovementSpeed;
+
+    [Space]
     [SerializeField] GameObject AttackArea;
     [SerializeField] float AttackDuration = 0.5f;
     [SerializeField] float AttackTimeRemaining = 0f;
@@ -24,6 +26,9 @@ public class WJChar : MonoBehaviour
     protected Quaternion TargetRotation;
     protected float VerticalVelocity;
 
+    protected Animator DayAnimator;
+    protected Animator NightAnimator;
+
     protected bool Invulnerable; 
 
     private void Awake()
@@ -34,6 +39,9 @@ public class WJChar : MonoBehaviour
     void Start()
     {
         CurrentHP = MaxHP;
+
+        if (transform.Find("PersonajeRigeado"))
+            DayAnimator = transform.Find("PersonajeRigeado").GetComponent<Animator>();
     }
 
     void Update()
@@ -50,6 +58,11 @@ public class WJChar : MonoBehaviour
         controlMovement = Vector3.zero;
         float moveAmount = (WJUtil.IsOnDaySide(transform.position) ? DayMovementSpeed : NightMovementSpeed);
         controlMovement = moveInput * Time.deltaTime * moveAmount;
+
+        if (DayAnimator != null)
+            DayAnimator.SetFloat("MovementSpeed", moveInput.magnitude);
+        if (NightAnimator != null)
+            NightAnimator.SetFloat("MovementSpeed", moveInput.magnitude);
     }
 
     void Rotation()
@@ -77,6 +90,7 @@ public class WJChar : MonoBehaviour
 
     void Attack()
     {
+
         if (AttackTimeRemaining > 0) {
             AttackTimeRemaining -= Time.deltaTime;
         } else {
@@ -95,12 +109,22 @@ public class WJChar : MonoBehaviour
 
     void OnFire(InputValue value)
     {
-        Debug.Log("Attack!");
+        // No ataco si no soy un hombre lobo
+        if (WJUtil.IsOnDaySide(transform.position))
+        {
+            Debug.Log("Cant attack! You're not a wolf!");
+            return;
+        }
+
+        // Debug.Log("Attack!");
         if (AttackTimeRemaining > 0) {
             return;
         }
         AttackTimeRemaining = AttackDuration;
         AttackArea.gameObject.SetActive(true);
+
+        // foreach (var cosa in FindObjectsOfType<WJEnemy>())
+            // cosa.ApplyDamage(30);
     }
 
     internal void StartInvul()
@@ -134,5 +158,4 @@ public class WJChar : MonoBehaviour
         WJGame.Death();
         Destroy(gameObject);
     }
-
 }
