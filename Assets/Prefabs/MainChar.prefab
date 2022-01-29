@@ -347,8 +347,12 @@ MonoBehaviour:
   AttackArea: {fileID: 4875948163838336375}
   AttackDuration: 0.2
   AttackTimeRemaining: 0
+  DashDuration: 0.5
+  DashSpeed: 20
+  DashCooldown: 3
   MaxHP: 100
   CurrentHP: 0
+  FXInvulnerability: {fileID: 8498040082387616414, guid: 77c9e795acdbf8044af7bd5f8f5fe5fa, type: 3}
 --- !u!143 &3870229963170104695
 CharacterController:
   m_ObjectHideFlags: 0
@@ -730,6 +734,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e0c4eaf4377ce418f437fb1867fe04, type: 3}
+--- !u!1 &1172450346612182530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 66e0c4eaf4377ce418f437fb1867fe04, type: 3}
+  m_PrefabInstance: {fileID: 2054776887340135251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7897000310555242475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172450346612182530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce1decd8fcebea4cbe4417b3ae4b668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 8498040082387616414, guid: 0addb50f8fa0ba843a5205e303cea640, type: 3}
 --- !u!4 &1949691179505947832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66e0c4eaf4377ce418f437fb1867fe04, type: 3}
@@ -1065,6 +1087,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3327955689757874573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5464995917879537520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce1decd8fcebea4cbe4417b3ae4b668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 8498040082387616414, guid: 18b9c7ebe6b3b4b4bb66b87780fe14eb, type: 3}
 --- !u!1001 &6264308831081178695
 PrefabInstance:
   m_ObjectHideFlags: 0
