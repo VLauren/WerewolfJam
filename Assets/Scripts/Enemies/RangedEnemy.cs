@@ -17,6 +17,8 @@ public class RangedEnemy : WJEnemy
     protected Quaternion TargetRotation;
     protected float VerticalVelocity;
 
+    protected Animator Anim;
+
     public override void Init()
     {
         base.Init();
@@ -24,6 +26,8 @@ public class RangedEnemy : WJEnemy
         path = new NavMeshPath();
 
         StartCoroutine(Shooting()); // Anyways I started blasting
+
+        Anim = transform.Find("EsqueletoRigeado").GetComponent<Animator>();
     }
 
     void Update()
@@ -45,9 +49,13 @@ public class RangedEnemy : WJEnemy
         else
             Movement = Vector3.zero;
 
+        bool movZero = false;
+
         // Solo me acerco si estoy lejos
         if (Vector3.Distance(transform.position, WJChar.Instance.transform.position) > TargetDistance)
             GetComponent<CharacterController>().Move(Movement * Time.deltaTime * MovementSpeed);
+        else
+            movZero = true;
 
         // Rotation
         if (Movement != Vector3.zero)
@@ -63,8 +71,14 @@ public class RangedEnemy : WJEnemy
         VerticalVelocity += Gravity * Time.fixedDeltaTime;
         GetComponent<CharacterController>().Move(new Vector3(0, VerticalVelocity, 0));
 
-        // if (Input.GetKeyDown(KeyCode.N))
-            // ApplyDamage(30);
+        if(movZero)
+            Movement = Vector3.zero;
+
+        if (Anim != null)
+        {
+            float newMS = Mathf.MoveTowards(Anim.GetFloat("MovementSpeed"), Movement == Vector3.zero ? 0 : 1, Time.deltaTime * 10);
+            Anim.SetFloat("MovementSpeed", newMS);
+        }
     }
 
     IEnumerator Shooting()
@@ -72,8 +86,17 @@ public class RangedEnemy : WJEnemy
         while(true)
         {
             yield return new WaitForSeconds(1.0f / FireRate);
-            Instantiate(Projectile, transform.position + transform.forward, Quaternion.identity);
+            StartCoroutine(Shoot());
         }
+    }
+
+    IEnumerator Shoot()
+    {
+        Anim.SetTrigger("Attack");
+
+        yield return new WaitForSeconds(0.3f);
+
+        Instantiate(Projectile, transform.Find("ProjectileSpawnPoint").position, Quaternion.identity);
     }
 
     public override void Death()
