@@ -27,7 +27,7 @@ public class EnemyProjectile : MonoBehaviour
         if(other.GetComponent<WJChar>() != null)
         {
             Destroy(gameObject);
-            print("HIT PLAYER!");
+            //print("HIT PLAYER!");
         }
     }
 }

@@ -1392,6 +1392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e3605e8ec24234dadc30f0922de06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BlinkMat: {fileID: 0}
 --- !u!4 &1524858498
 Transform:
   m_ObjectHideFlags: 0
@@ -2334,6 +2335,10 @@ PrefabInstance:
       propertyPath: WaitTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3870229963170104692, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
+      propertyPath: moveSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3870229963170104693, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2384,3 +2389,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
+--- !u!1 &3870229961891459086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3870229963170104697, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
+  m_PrefabInstance: {fileID: 3870229961891459085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3870229961891459087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3870229961891459086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: bb1693e9d40982b498afd6c8f20362b1, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

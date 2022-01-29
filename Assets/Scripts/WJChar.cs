@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WJChar : MonoBehaviour
 {
     public static WJChar Instance { get; private set; }
 
-    public float DayMovementSpeed;
-    public float NightMovementSpeed;
+    [SerializeField] float DayMovementSpeed;
+    [SerializeField] float NightMovementSpeed;
+    [SerializeField] GameObject AttackArea;
 
+    Vector3 moveInput;
+    Vector3 controlMovement;
     protected Quaternion TargetRotation;
     protected float VerticalVelocity;
 
@@ -24,25 +28,33 @@ public class WJChar : MonoBehaviour
 
     void Update()
     {
-        Vector3 controlMovement = Vector3.zero;
-        float fMove = Input.GetAxisRaw("Vertical");
-        float lMove = Input.GetAxisRaw("Horizontal");
+        Walk();
+        Rotation();
+        Gravity();
+        // TODO: var de movement speed, var de gravity, var de model rotation speed
+    }
 
-        controlMovement = new Vector3(lMove, 0, fMove) * Time.deltaTime * (WJUtil.IsOnDaySide(transform.position) ? DayMovementSpeed : NightMovementSpeed);
+    void Walk()
+    {
+        controlMovement = Vector3.zero;
+        float moveAmount = (WJUtil.IsOnDaySide(transform.position) ? DayMovementSpeed : NightMovementSpeed);
+        controlMovement = moveInput * Time.deltaTime * moveAmount;
+    }
 
+    void Rotation()
+    {
         float rCam = Camera.main.transform.eulerAngles.y;
-
         // Direccion relativa a camara
         controlMovement = Quaternion.Euler(0, rCam, 0) * controlMovement;
-
-        // Rotacion
         if (controlMovement != Vector3.zero)
         {
             TargetRotation = Quaternion.LookRotation(controlMovement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, TargetRotation, Time.deltaTime * 360);
         }
+    }
 
-        // Gravedad
+    void Gravity()
+    {
         if (GetComponent<CharacterController>().isGrounded && VerticalVelocity < 0)
             VerticalVelocity = 0;
         VerticalVelocity += -1 * Time.fixedDeltaTime; // TODO ese 1, datos gravedad
@@ -50,7 +62,18 @@ public class WJChar : MonoBehaviour
         bool grounded = GetComponent<CharacterController>().isGrounded;
 
         GetComponent<CharacterController>().Move(controlMovement + new Vector3(0, VerticalVelocity, 0));
+    }
 
-        // TODO: var de movement speed, var de gravity, var de model rotation speed
+    void OnMove(InputValue value)
+    {
+        Vector2 raw = value.Get<Vector2>();
+        moveInput = Vector2.zero;
+        moveInput = new Vector3(raw.x, 0, raw.y);
+        // Debug.Log(moveInput);
+    }
+
+    void OnFire(InputValue value)
+    {
+        Debug.Log("Attack!");
     }
 }
