@@ -11,6 +11,9 @@ public class EnemySpawner : MonoBehaviour
     public float xDist;
     public float zDist;
 
+    [Space()]
+    public float WaitTime;
+
     void Start()
     {
         StartCoroutine(Spawn());
@@ -20,11 +23,11 @@ public class EnemySpawner : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(WaitTime);
 
             SpawnFlyingEnemy();
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(WaitTime);
 
             SpawnRangedEnemy();
         }
