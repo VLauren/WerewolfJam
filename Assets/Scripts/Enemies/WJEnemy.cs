@@ -31,6 +31,7 @@ public class WJEnemy : MonoBehaviour
 
     public virtual void Death()
     {
+        WJScoreKeeper.Instance.ModifyScore(InvulReward);
         WJGame.AddInvul(InvulReward);
     }
 }
