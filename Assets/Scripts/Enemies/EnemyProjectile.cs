@@ -22,6 +22,8 @@ public class EnemyProjectile : MonoBehaviour
         Elapsed += Time.deltaTime;
         if (Elapsed >= 5)
             Destroy(gameObject);
+
+        transform.Find("Huesito").Rotate(Time.deltaTime * 360 * 3, 0, 0);
     }
 
     private void OnTriggerEnter(Collider other)

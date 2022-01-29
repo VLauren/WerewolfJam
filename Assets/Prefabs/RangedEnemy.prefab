@@ -121,7 +121,7 @@ MonoBehaviour:
   MaxHP: 100
   CurrentHP: 0
   InvulReward: 10
-  MovementSpeed: 3
+  MovementSpeed: 2
   Gravity: -0.5
   TargetDistance: 4
   FireRate: 0.5
