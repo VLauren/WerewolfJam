@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 3870229963170104696}
   - component: {fileID: 3870229963170104692}
   - component: {fileID: 3870229963170104695}
+  - component: {fileID: 1233213043440464169}
   m_Layer: 0
   m_Name: MainChar
   m_TagString: Untagged
@@ -325,3 +326,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1233213043440464169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3870229963170104697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924c28eb919bc86458da37daeef9e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangedEnemy: {fileID: 67456953376424206, guid: 870c3b19264826343a5aca17990534d0, type: 3}
+  FlyingEnemy: {fileID: 4307638679553854214, guid: 2ee505906691cb64ea64bfd9fbf7f112, type: 3}
+  xDist: 9
+  zDist: 6
