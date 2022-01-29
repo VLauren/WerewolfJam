@@ -8,6 +8,9 @@ public class WJRenderCam : MonoBehaviour
 
     public const float OscSpeed = 0.1f;
 
+    public float MiddleZ;
+    public float ZMovementMultiplier;
+
     public enum CamType
     {
         RIGHT,
@@ -29,8 +32,11 @@ public class WJRenderCam : MonoBehaviour
         if (WJChar.Instance == null)
             return;
 
-        transform.position = WJChar.Instance.transform.position + Offset;
-        transform.LookAt(WJChar.Instance.transform.position);
+        Vector3 pointToFollow = WJChar.Instance.transform.position;
+        pointToFollow.z = MiddleZ + (WJChar.Instance.transform.position.z - MiddleZ) * ZMovementMultiplier;
+
+        transform.position = pointToFollow + Offset;
+        transform.LookAt(pointToFollow);
 
         if (Type == CamType.RIGHT)
         {
