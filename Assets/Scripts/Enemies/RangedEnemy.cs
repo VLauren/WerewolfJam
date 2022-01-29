@@ -17,11 +17,13 @@ public class RangedEnemy : WJEnemy
     protected Quaternion TargetRotation;
     protected float VerticalVelocity;
 
-    void Start()
+    public override void Init()
     {
+        base.Init();
+
         path = new NavMeshPath();
 
-        StartCoroutine(Shooting());
+        StartCoroutine(Shooting()); // Anyways I started blasting
     }
 
     void Update()
@@ -56,6 +58,7 @@ public class RangedEnemy : WJEnemy
         if (GetComponent<CharacterController>().isGrounded && VerticalVelocity < 0)
             VerticalVelocity = 0;
         VerticalVelocity += Gravity * Time.fixedDeltaTime;
+        GetComponent<CharacterController>().Move(new Vector3(0, VerticalVelocity, 0));
     }
 
     IEnumerator Shooting()

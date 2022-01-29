@@ -4,5 +4,28 @@ using UnityEngine;
 
 public class WJEnemy : MonoBehaviour
 {
+    public int MaxHP;
+    public int CurrentHP;
 
+    private void Start()
+    {
+        Init();
+    }
+
+    public virtual void Init()
+    {
+        CurrentHP = MaxHP;
+    }
+
+    public virtual void ApplyDamage(int _damage)
+    {
+        CurrentHP -= _damage;
+        if (CurrentHP <= 0)
+            Death();
+    }
+
+    public virtual void Death()
+    {
+
+    }
 }
