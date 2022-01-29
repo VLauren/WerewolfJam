@@ -46,6 +46,8 @@ public class WJChar : MonoBehaviour
 
         if (transform.Find("PersonajeRigeado"))
             DayAnimator = transform.Find("PersonajeRigeado").GetComponent<Animator>();
+        if (transform.Find("WerewolfRigeado"))
+            NightAnimator = transform.Find("WerewolfRigeado").GetComponent<Animator>();
 
         // Guardo los colores iniciales
         var mats = transform.Find("PersonajeRigeado/Character").GetComponent<Renderer>().materials;
@@ -71,9 +73,15 @@ public class WJChar : MonoBehaviour
         controlMovement = moveInput * Time.deltaTime * moveAmount;
 
         if (DayAnimator != null)
-            DayAnimator.SetFloat("MovementSpeed", moveInput.magnitude);
+        {
+            float newMS = Mathf.MoveTowards(DayAnimator.GetFloat("MovementSpeed"), moveInput.magnitude, Time.deltaTime * 10);
+            DayAnimator.SetFloat("MovementSpeed", newMS);
+        }
         if (NightAnimator != null)
-            NightAnimator.SetFloat("MovementSpeed", moveInput.magnitude);
+        {
+            float newMS = Mathf.MoveTowards(DayAnimator.GetFloat("MovementSpeed"), moveInput.magnitude, Time.deltaTime * 10);
+            NightAnimator.SetFloat("MovementSpeed", newMS);
+        }
     }
 
     void Rotation()
@@ -146,6 +154,8 @@ public class WJChar : MonoBehaviour
         }
         AttackTimeRemaining = AttackDuration;
         AttackArea.gameObject.SetActive(true);
+
+        NightAnimator.SetTrigger("Attack");
 
         // foreach (var cosa in FindObjectsOfType<WJEnemy>())
             // cosa.ApplyDamage(30);
