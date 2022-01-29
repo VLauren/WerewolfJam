@@ -6,6 +6,9 @@ public class WJChar : MonoBehaviour
 {
     public static WJChar Instance { get; private set; }
 
+    public float DayMovementSpeed;
+    public float NightMovementSpeed;
+
     protected Quaternion TargetRotation;
     protected float VerticalVelocity;
 
@@ -24,7 +27,8 @@ public class WJChar : MonoBehaviour
         Vector3 controlMovement = Vector3.zero;
         float fMove = Input.GetAxisRaw("Vertical");
         float lMove = Input.GetAxisRaw("Horizontal");
-        controlMovement = new Vector3(lMove, 0, fMove) * Time.deltaTime * 4; // TODO ese 4 de datos MovementSpeed
+
+        controlMovement = new Vector3(lMove, 0, fMove) * Time.deltaTime * (WJUtil.IsOnDaySide(transform.position) ? DayMovementSpeed : NightMovementSpeed);
 
         float rCam = Camera.main.transform.eulerAngles.y;
 
