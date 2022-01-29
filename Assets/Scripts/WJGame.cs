@@ -13,7 +13,7 @@ public class WJGame : MonoBehaviour
     [Space()]
     public float InvulTime;
 
-    internal int InvulGauge = 0;
+    internal int InvulGauge = 0; 
 
     bool InvulActive;
 
