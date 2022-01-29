@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
+    [SerializeField] int damage = 10;
     public float Speed;
 
     float Elapsed = 0;
@@ -27,7 +28,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         if(other.GetComponent<WJChar>() != null)
         {
-            WJChar.Instance.ApplyDamage(10);
+            WJChar.Instance.ApplyDamage(damage);
 
             Destroy(gameObject);
         }
