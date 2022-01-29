@@ -12,6 +12,8 @@ public class WJChar : MonoBehaviour
     [SerializeField] float DayMovementSpeed;
     [SerializeField] float NightMovementSpeed;
     [SerializeField] GameObject AttackArea;
+    [SerializeField] float AttackDuration = 0.5f;
+    [SerializeField] float AttackTimeRemaining = 0f;
 
     Vector3 moveInput;
     Vector3 controlMovement;
@@ -39,6 +41,7 @@ public class WJChar : MonoBehaviour
         Walk();
         Rotation();
         Gravity();
+        Attack();
         // TODO: var de movement speed, var de gravity, var de model rotation speed
     }
 
@@ -72,6 +75,16 @@ public class WJChar : MonoBehaviour
         GetComponent<CharacterController>().Move(controlMovement + new Vector3(0, VerticalVelocity, 0));
     }
 
+    void Attack()
+    {
+        if (AttackTimeRemaining > 0) {
+            AttackTimeRemaining -= Time.deltaTime;
+        } else {
+            AttackTimeRemaining = 0f;
+            AttackArea.gameObject.SetActive(false);
+        }
+    }
+
     void OnMove(InputValue value)
     {
         Vector2 raw = value.Get<Vector2>();
@@ -83,6 +96,11 @@ public class WJChar : MonoBehaviour
     void OnFire(InputValue value)
     {
         Debug.Log("Attack!");
+        if (AttackTimeRemaining > 0) {
+            return;
+        }
+        AttackTimeRemaining = AttackDuration;
+        AttackArea.gameObject.SetActive(true);
     }
 
     internal void StartInvul()
