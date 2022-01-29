@@ -44,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
 
         zPos = (Random.value - 0.5f) * zDist;
 
-        Instantiate(FlyingEnemy, new Vector3(xPos, 2, zPos), Quaternion.identity);
+        Instantiate(FlyingEnemy, new Vector3(xPos, 3, zPos), Quaternion.identity);
     }
 
     void SpawnRangedEnemy()
