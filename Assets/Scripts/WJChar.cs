@@ -11,6 +11,8 @@ public class WJChar : MonoBehaviour
 
     [SerializeField] float DayMovementSpeed;
     [SerializeField] float NightMovementSpeed;
+    [SerializeField] float GravityAccel = -1;
+    [SerializeField] float RotationSpeed = 360;
 
     [Space]
     [SerializeField] GameObject AttackArea;
@@ -29,7 +31,9 @@ public class WJChar : MonoBehaviour
     protected Animator DayAnimator;
     protected Animator NightAnimator;
 
-    protected bool Invulnerable; 
+    protected bool Invulnerable;
+
+    protected Color[] OGDayColors;
 
     private void Awake()
     {
@@ -42,6 +46,12 @@ public class WJChar : MonoBehaviour
 
         if (transform.Find("PersonajeRigeado"))
             DayAnimator = transform.Find("PersonajeRigeado").GetComponent<Animator>();
+
+        // Guardo los colores iniciales
+        var mats = transform.Find("PersonajeRigeado/Character").GetComponent<Renderer>().materials;
+        OGDayColors = new Color[mats.Length];
+        for (int i = 0; i < mats.Length; i++)
+            OGDayColors[i] = mats[i].color;
     }
 
     void Update()
@@ -50,7 +60,8 @@ public class WJChar : MonoBehaviour
         Rotation();
         Gravity();
         Attack();
-        // TODO: var de movement speed, var de gravity, var de model rotation speed
+
+        ColorFX();
     }
 
     void Walk()
@@ -73,7 +84,7 @@ public class WJChar : MonoBehaviour
         if (controlMovement != Vector3.zero)
         {
             TargetRotation = Quaternion.LookRotation(controlMovement, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, TargetRotation, Time.deltaTime * 360);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, TargetRotation, Time.deltaTime * RotationSpeed);
         }
     }
 
@@ -81,7 +92,7 @@ public class WJChar : MonoBehaviour
     {
         if (GetComponent<CharacterController>().isGrounded && VerticalVelocity < 0)
             VerticalVelocity = 0;
-        VerticalVelocity += -1 * Time.fixedDeltaTime; // TODO ese 1, datos gravedad
+        VerticalVelocity += GravityAccel * Time.fixedDeltaTime;
 
         bool grounded = GetComponent<CharacterController>().isGrounded;
 
@@ -97,6 +108,19 @@ public class WJChar : MonoBehaviour
             AttackTimeRemaining = 0f;
             AttackArea.gameObject.SetActive(false);
         }
+    }
+
+    float colorOsc;
+    void ColorFX()
+    {
+        return;
+
+        colorOsc = (Mathf.Sin(Time.time * 8 * Mathf.PI) + 1) / 2; // Oscila entre 0 y 1
+
+        var mats = transform.Find("PersonajeRigeado/Character").GetComponent<Renderer>().materials;
+        for (int i = 0; i < mats.Length; i++)
+            mats[i].color = OGDayColors[i] + (Color.white / 5) * colorOsc;
+        transform.Find("PersonajeRigeado/Character").GetComponent<Renderer>().materials = mats;
     }
 
     void OnMove(InputValue value)
