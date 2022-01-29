@@ -7,6 +7,9 @@ public class WJEnemy : MonoBehaviour
     public int MaxHP;
     public int CurrentHP;
 
+    [Space]
+    public int InvulReward;
+
     private void Start()
     {
         Init();
@@ -28,6 +31,6 @@ public class WJEnemy : MonoBehaviour
 
     public virtual void Death()
     {
-
+        WJGame.AddInvul(InvulReward);
     }
 }

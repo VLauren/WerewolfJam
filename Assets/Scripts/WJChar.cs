@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class WJChar : MonoBehaviour
 
     protected Quaternion TargetRotation;
     protected float VerticalVelocity;
+
+    protected bool Invulnerable; 
 
     private void Awake()
     {
@@ -82,8 +85,25 @@ public class WJChar : MonoBehaviour
         Debug.Log("Attack!");
     }
 
+    internal void StartInvul()
+    {
+        Invulnerable = true;
+
+        // TODO representar visualmente
+    }
+
+    internal void StopInvul()
+    {
+        Invulnerable = false;
+
+        // TODO representar visualmente
+    }
+
     public void ApplyDamage(int _damage)
     {
+        if (Invulnerable)
+            return;
+
         CurrentHP -= _damage;
         if (CurrentHP <= 0)
             Death();

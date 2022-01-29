@@ -63,8 +63,8 @@ public class RangedEnemy : WJEnemy
         VerticalVelocity += Gravity * Time.fixedDeltaTime;
         GetComponent<CharacterController>().Move(new Vector3(0, VerticalVelocity, 0));
 
-        if (Input.GetKeyDown(KeyCode.N))
-            ApplyDamage(30);
+        // if (Input.GetKeyDown(KeyCode.N))
+            // ApplyDamage(30);
     }
 
     IEnumerator Shooting()

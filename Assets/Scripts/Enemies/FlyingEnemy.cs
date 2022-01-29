@@ -15,8 +15,8 @@ public class FlyingEnemy : WJEnemy
 
         transform.Translate(Vector3.forward * Time.deltaTime * MovementSpeed);
 
-        if (Input.GetKeyDown(KeyCode.N))
-            ApplyDamage(30);
+        // if (Input.GetKeyDown(KeyCode.N))
+            // ApplyDamage(30);
     }
 
     void OnTriggerEnter(Collider other)
