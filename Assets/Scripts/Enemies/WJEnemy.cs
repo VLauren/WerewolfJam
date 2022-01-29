@@ -22,6 +22,8 @@ public class WJEnemy : MonoBehaviour
         CurrentHP -= _damage;
         if (CurrentHP <= 0)
             Death();
+
+        SendMessage("Blink");
     }
 
     public virtual void Death()

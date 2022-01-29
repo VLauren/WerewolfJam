@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WJChar : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class WJChar : MonoBehaviour
 
     public float DayMovementSpeed;
     public float NightMovementSpeed;
+
+    [Space()]
+    public int MaxHP;
+    public int CurrentHP;
 
     protected Quaternion TargetRotation;
     protected float VerticalVelocity;
@@ -19,7 +24,7 @@ public class WJChar : MonoBehaviour
 
     void Start()
     {
-        
+        CurrentHP = MaxHP;
     }
 
     void Update()
@@ -53,4 +58,20 @@ public class WJChar : MonoBehaviour
 
         // TODO: var de movement speed, var de gravity, var de model rotation speed
     }
+
+    public void ApplyDamage(int _damage)
+    {
+        CurrentHP -= _damage;
+        if (CurrentHP <= 0)
+            Death();
+
+        BroadcastMessage("Blink");
+    }
+
+    public virtual void Death()
+    {
+        WJGame.Death();
+        Destroy(gameObject);
+    }
+
 }

@@ -26,6 +26,9 @@ public class WJRenderCam : MonoBehaviour
 
     void Update()
     {
+        if (WJChar.Instance == null)
+            return;
+
         transform.position = WJChar.Instance.transform.position + Offset;
         transform.LookAt(WJChar.Instance.transform.position);
 
