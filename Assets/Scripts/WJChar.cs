@@ -174,7 +174,7 @@ public class WJChar : MonoBehaviour
         if (CurrentHP <= 0)
             Death();
 
-        BroadcastMessage("Blink");
+        BroadcastMessage("Blink", SendMessageOptions.DontRequireReceiver);
     }
 
     public virtual void Death()
