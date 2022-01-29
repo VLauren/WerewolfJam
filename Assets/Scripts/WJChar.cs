@@ -122,7 +122,9 @@ public class WJChar : MonoBehaviour
     float colorOsc;
     void ColorFX()
     {
-        return;
+        if (!Invulnerable) {
+            return;
+        }
 
         colorOsc = (Mathf.Sin(Time.time * 8 * Mathf.PI) + 1) / 2; // Oscila entre 0 y 1
 
