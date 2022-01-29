@@ -10,7 +10,8 @@ public class EnemyProjectile : MonoBehaviour
 
     void Start()
     {
-        transform.LookAt(WJChar.Instance.transform.position);
+        if (WJChar.Instance != null)
+            transform.LookAt(WJChar.Instance.transform.position);
     }
 
     void Update()
@@ -26,8 +27,9 @@ public class EnemyProjectile : MonoBehaviour
     {
         if(other.GetComponent<WJChar>() != null)
         {
+            WJChar.Instance.ApplyDamage(10);
+
             Destroy(gameObject);
-            //print("HIT PLAYER!");
         }
     }
 }

@@ -28,6 +28,9 @@ public class RangedEnemy : WJEnemy
 
     void Update()
     {
+        if (WJChar.Instance == null)
+            return;
+
         Vector3 _destination = WJChar.Instance.transform.position;
 
         NavMesh.CalculatePath(transform.position, _destination, NavMesh.AllAreas, path);
@@ -59,6 +62,9 @@ public class RangedEnemy : WJEnemy
             VerticalVelocity = 0;
         VerticalVelocity += Gravity * Time.fixedDeltaTime;
         GetComponent<CharacterController>().Move(new Vector3(0, VerticalVelocity, 0));
+
+        if (Input.GetKeyDown(KeyCode.N))
+            ApplyDamage(30);
     }
 
     IEnumerator Shooting()
@@ -68,5 +74,12 @@ public class RangedEnemy : WJEnemy
             yield return new WaitForSeconds(1.0f / FireRate);
             Instantiate(Projectile, transform.position + transform.forward, Quaternion.identity);
         }
+    }
+
+    public override void Death()
+    {
+        base.Death();
+
+        Destroy(gameObject);
     }
 }

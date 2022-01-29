@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class WJChar : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class WJChar : MonoBehaviour
 
     Vector3 moveInput;
     Vector3 controlMovement;
+    [Space()]
+    public int MaxHP;
+    public int CurrentHP;
+
     protected Quaternion TargetRotation;
     protected float VerticalVelocity;
 
@@ -23,7 +28,7 @@ public class WJChar : MonoBehaviour
 
     void Start()
     {
-        
+        CurrentHP = MaxHP;
     }
 
     void Update()
@@ -76,4 +81,20 @@ public class WJChar : MonoBehaviour
     {
         Debug.Log("Attack!");
     }
+
+    public void ApplyDamage(int _damage)
+    {
+        CurrentHP -= _damage;
+        if (CurrentHP <= 0)
+            Death();
+
+        BroadcastMessage("Blink");
+    }
+
+    public virtual void Death()
+    {
+        WJGame.Death();
+        Destroy(gameObject);
+    }
+
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7235719558714285393}
   - component: {fileID: 4433192792440380045}
   - component: {fileID: 5647943070743765512}
+  - component: {fileID: 269534608380717166}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Untagged
@@ -115,8 +116,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80124d17ad33334aad7f897d553f33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHP: 100
+  CurrentHP: 0
   MovementSpeed: 3
   Gravity: -0.5
   TargetDistance: 4
   FireRate: 1
   Projectile: {fileID: 5626950607131837304, guid: 8f89fe7a87f1915438b598cebe906be6, type: 3}
+--- !u!114 &269534608380717166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67456953376424206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7459b3c61622a49a135c2fa6cbee11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
