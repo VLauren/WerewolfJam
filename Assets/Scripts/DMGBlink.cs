@@ -13,7 +13,6 @@ public class DMGBlink : MonoBehaviour
 
     public void Blink()
     {
-        Debug.Log("BLINK " + gameObject.name);
         StartCoroutine(DBlink());
     }
 

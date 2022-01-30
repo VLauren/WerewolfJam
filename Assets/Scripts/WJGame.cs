@@ -113,7 +113,6 @@ public class WJGame : MonoBehaviour
             return;
 
         Instance.InvulGauge += _invul;
-        print("Invul gauge: " + Instance.InvulGauge);
 
         if(Instance.InvulGauge >= 100)
         {

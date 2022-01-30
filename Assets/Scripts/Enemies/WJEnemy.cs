@@ -26,6 +26,8 @@ public class WJEnemy : MonoBehaviour
         if (CurrentHP <= 0)
             Death();
 
+        WJRenderCam.CameraShake(0.15f, 0.2f);
+
         BroadcastMessage("Blink", SendMessageOptions.DontRequireReceiver);
     }
 
