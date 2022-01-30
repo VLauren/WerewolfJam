@@ -149,10 +149,11 @@ public class WJChar : MonoBehaviour
     {
         if (DashTimeRemaining > 0)
         {
+            // Dasheando
+
             DashTimeRemaining -= Time.deltaTime;
 
-            GetComponent<CharacterController>().Move(moveInput * DashSpeed * Time.deltaTime);
-
+            GetComponent<CharacterController>().Move(DashDirection * DashSpeed * Time.deltaTime);
         }
         else if (!CanControl)
         {
@@ -162,8 +163,6 @@ public class WJChar : MonoBehaviour
             CanDash = false;
 
             NightAnimator.SetTrigger("EndDash");
-
-            Debug.Log("Can control again");
         }
 
         if (DashCooldownTimeRemaining > 0)
@@ -174,7 +173,6 @@ public class WJChar : MonoBehaviour
         {
             DashCooldownTimeRemaining = 0f;
             CanDash = true;
-            Debug.Log("Can dash again");
         }
     }
 
@@ -205,7 +203,6 @@ public class WJChar : MonoBehaviour
         // No ataco si no soy un hombre lobo
         if (WJUtil.IsOnDaySide(transform.position))
         {
-            Debug.Log("Cant attack! You're not a wolf!");
             return;
         }
 
@@ -249,6 +246,10 @@ public class WJChar : MonoBehaviour
             // Inicio de dash
 
             DashDirection = moveInput;
+
+            if (DashDirection == Vector3.zero)
+                DashDirection = transform.forward;
+
             DashTimeRemaining = DashDuration;
             CanControl = false;
 

@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80124d17ad33334aad7f897d553f33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
+  MaxHP: 50
   CurrentHP: 0
   InvulReward: 10
   MovementSpeed: 2
