@@ -350,10 +350,11 @@ MonoBehaviour:
   AttackTimeRemaining: 0
   DashDuration: 0.2
   DashSpeed: 13
-  DashCooldown: 0.21
+  DashCooldown: 0.5
   MaxHP: 100
   CurrentHP: 0
   FXInvulnerability: {fileID: 3762348261493051931}
+  Dead: 0
 --- !u!143 &3870229963170104695
 CharacterController:
   m_ObjectHideFlags: 0
