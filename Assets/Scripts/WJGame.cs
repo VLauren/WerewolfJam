@@ -102,7 +102,10 @@ public class WJGame : MonoBehaviour
 
     IEnumerator DeathRoutine()
     {
-        yield return new WaitForSeconds(3);
+        foreach (var esq in FindObjectsOfType<RangedEnemy>())
+            esq.Victory();
+
+        yield return new WaitForSeconds(4);
 
         SceneManager.LoadScene(0);
     }

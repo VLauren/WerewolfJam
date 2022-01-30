@@ -35,7 +35,7 @@ public class RangedEnemy : WJEnemy
 
     void Update()
     {
-        if (WJChar.Instance == null)
+        if (WJChar.Instance == null || Vic)
             return;
 
         Vector3 _destination = WJChar.Instance.transform.position;
@@ -112,8 +112,10 @@ public class RangedEnemy : WJEnemy
         Destroy(gameObject);
     }
 
+    bool Vic = false;
     public void Victory()
     {
+        Vic = true;
         Anim.SetTrigger("Victory");
     }
 }

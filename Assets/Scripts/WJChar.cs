@@ -290,7 +290,7 @@ public class WJChar : MonoBehaviour
 
     public void ApplyDamage(int _damage)
     {
-        if (Invulnerable)
+        if (Invulnerable || Dead)
             return;
 
         CurrentHP -= _damage;
@@ -312,14 +312,16 @@ public class WJChar : MonoBehaviour
         WJRenderCam.CameraShake(0.15f, 0.2f);
     }
 
+    public bool Dead = false;
     public virtual void Death()
     {
         WJGame.Death();
 
-        // CanControl = false;
-        // DayAnimator.SetTrigger("Death");
-        // NightAnimator.SetTrigger("Death");
+        Dead = true;
+        CanControl = false;
+        DayAnimator.SetTrigger("Death");
+        NightAnimator.SetTrigger("Death");
 
-        Destroy(gameObject);
+        // Destroy(gameObject);
     }
 }
