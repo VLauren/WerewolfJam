@@ -113,7 +113,7 @@
                             0.0,
                             0.0,
                             17765.0,
-                            1.0
+                            0.4000000059604645
                         ]
                     },
                     {
@@ -496,21 +496,21 @@
                         "values": [
                             0.0,
                             0.0,
-                            37524.0,
+                            8574.0,
                             1.0,
-                            37574.0,
+                            8583.0,
                             1.0,
-                            37549.0,
+                            8592.0,
                             1.0,
-                            37599.0,
+                            8601.0,
                             1.0,
-                            37624.0,
+                            8610.0,
                             1.0,
-                            37649.0,
+                            8619.0,
                             1.0,
-                            37699.0,
+                            8628.0,
                             1.0,
-                            37674.0,
+                            8637.0,
                             1.0
                         ]
                     }
@@ -662,8 +662,8 @@
                         "type": 1,
                         "ID": 4,
                         "Name": "aullido",
-                        "Pos_x": -583.5999755859375,
-                        "Pos_y": 241.10000610351563,
+                        "Pos_x": -607.5999755859375,
+                        "Pos_y": 193.10000610351563,
                         "Size_x": 200.0,
                         "Size_y": 100.0,
                         "can_be_deleted": true,
@@ -686,9 +686,9 @@
                         "values": [
                             0.0,
                             0.0,
-                            7274.0,
+                            9355.0,
                             1.0,
-                            7282.0,
+                            9363.0,
                             1.0
                         ]
                     },
@@ -1527,219 +1527,279 @@
                 "size": 124414
             },
             {
-                "id": 7282,
+                "id": 9355,
                 "bankFile": "KSB128664871291624228250DATA.krll",
                 "offsetBytes": 124414,
+                "size": 147507
+            },
+            {
+                "id": 7282,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 271921,
                 "size": 134691
+            },
+            {
+                "id": 9363,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 406612,
+                "size": 164954
             },
             {
                 "id": 6221,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 259105,
+                "offsetBytes": 571566,
                 "size": 108047
             },
             {
                 "id": 6228,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 367152,
+                "offsetBytes": 679613,
                 "size": 165274
             },
             {
                 "id": 24662,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 532426,
+                "offsetBytes": 844887,
                 "size": 57446
             },
             {
                 "id": 24681,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 589872,
+                "offsetBytes": 902333,
                 "size": 48548
             },
             {
                 "id": 24700,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 638420,
+                "offsetBytes": 950881,
                 "size": 59876
             },
             {
                 "id": 24719,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 698296,
+                "offsetBytes": 1010757,
                 "size": 57538
             },
             {
                 "id": 24738,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 755834,
+                "offsetBytes": 1068295,
                 "size": 75070
             },
             {
                 "id": 12139,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 830904,
+                "offsetBytes": 1143365,
                 "size": 3203030
             },
             {
                 "id": 12346,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 4033934,
+                "offsetBytes": 4346395,
                 "size": 26830
             },
             {
                 "id": 9107,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 4060764,
+                "offsetBytes": 4373225,
                 "size": 3216909
             },
             {
                 "id": 17765,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7277673,
+                "offsetBytes": 7590134,
                 "size": 35842
             },
             {
                 "id": 10754,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7313515,
+                "offsetBytes": 7625976,
                 "size": 82510
             },
             {
                 "id": 10723,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7396025,
+                "offsetBytes": 7708486,
                 "size": 29470
             },
             {
                 "id": 37524,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7425495,
+                "offsetBytes": 7737956,
                 "size": 47050
             },
             {
                 "id": 37549,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7472545,
+                "offsetBytes": 7785006,
                 "size": 46792
             },
             {
                 "id": 37574,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7519337,
+                "offsetBytes": 7831798,
                 "size": 38260
             },
             {
                 "id": 37599,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7557597,
+                "offsetBytes": 7870058,
                 "size": 40706
             },
             {
                 "id": 37624,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7598303,
+                "offsetBytes": 7910764,
                 "size": 56906
             },
             {
                 "id": 37649,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7655209,
+                "offsetBytes": 7967670,
                 "size": 39122
             },
             {
                 "id": 37674,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7694331,
+                "offsetBytes": 8006792,
                 "size": 53050
             },
             {
                 "id": 37699,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7747381,
+                "offsetBytes": 8059842,
                 "size": 53236
+            },
+            {
+                "id": 8574,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 8113078,
+                "size": 12799
+            },
+            {
+                "id": 8583,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 8125877,
+                "size": 13430
+            },
+            {
+                "id": 8592,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 8139307,
+                "size": 11011
+            },
+            {
+                "id": 8601,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 8150318,
+                "size": 4135
+            },
+            {
+                "id": 8610,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 8154453,
+                "size": 14398
+            },
+            {
+                "id": 8619,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 8168851,
+                "size": 11603
+            },
+            {
+                "id": 8628,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 8180454,
+                "size": 13772
+            },
+            {
+                "id": 8637,
+                "bankFile": "KSB128664871291624228250DATA.krll",
+                "offsetBytes": 8194226,
+                "size": 14838
             },
             {
                 "id": 7743,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7800617,
+                "offsetBytes": 8209064,
                 "size": 21860
             },
             {
                 "id": 8556,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7822477,
+                "offsetBytes": 8230924,
                 "size": 21059
             },
             {
                 "id": 4101,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7843536,
+                "offsetBytes": 8251983,
                 "size": 94333
             },
             {
                 "id": 4106,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 7937869,
+                "offsetBytes": 8346316,
                 "size": 102092
             },
             {
                 "id": 4111,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8039961,
+                "offsetBytes": 8448408,
                 "size": 90820
             },
             {
                 "id": 4116,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8130781,
+                "offsetBytes": 8539228,
                 "size": 81704
             },
             {
                 "id": 4121,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8212485,
+                "offsetBytes": 8620932,
                 "size": 101896
             },
             {
                 "id": 4126,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8314381,
+                "offsetBytes": 8722828,
                 "size": 99667
             },
             {
                 "id": 4131,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8414048,
+                "offsetBytes": 8822495,
                 "size": 97071
             },
             {
                 "id": 4136,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8511119,
+                "offsetBytes": 8919566,
                 "size": 90286
             },
             {
                 "id": 4141,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8601405,
+                "offsetBytes": 9009852,
                 "size": 60629
             },
             {
                 "id": 4146,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8662034,
+                "offsetBytes": 9070481,
                 "size": 81642
             },
             {
                 "id": 15594,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8743676,
+                "offsetBytes": 9152123,
                 "size": 37013
             },
             {
                 "id": 12218,
                 "bankFile": "KSB128664871291624228250DATA.krll",
-                "offsetBytes": 8780689,
+                "offsetBytes": 9189136,
                 "size": 19450
             }
         ],
@@ -1747,7 +1807,7 @@
             {
                 "cereal_class_version": 20191030,
                 "variable_name": "pasos",
-                "current_value": 0.0,
+                "current_value": 2.0,
                 "type": 0,
                 "source": 2,
                 "content": 0,
@@ -1844,7 +1904,7 @@
                 "channel_id": 2,
                 "channel_name": "pajaro",
                 "parent_id": 0,
-                "volume": 1.0
+                "volume": 0.5
             },
             {
                 "channel_id": 3,
@@ -1886,6 +1946,6 @@
                 "buffer_size": 0
             }
         ],
-        "creation_time": 1643543397
+        "creation_time": 1643547175
     }
 }

@@ -32,7 +32,9 @@ public class UIDisplay : MonoBehaviour
     void Update()
     {
         healthBar.value = player.CurrentHP;
-        invulnerabilityBar.value = WJGame.Instance.InvulGauge;
+
+        invulnerabilityBar.value = WJGame.Instance.InvulGauge * 0.58f;
+
         scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("000");
         if (WJUtil.IsOnDaySide(WJChar.Instance.transform.position)) {
             kidImage.gameObject.SetActive(true);

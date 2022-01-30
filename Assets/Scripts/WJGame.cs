@@ -127,7 +127,6 @@ public class WJGame : MonoBehaviour
 
     IEnumerator InvulRoutine()
     {
-        print("START INVUL");
         InvulActive = true;
         WJChar.Instance.StartInvul();
 
@@ -135,6 +134,5 @@ public class WJGame : MonoBehaviour
 
         InvulActive = false;
         WJChar.Instance.StopInvul();
-        print("END INVUL");
     }
 }

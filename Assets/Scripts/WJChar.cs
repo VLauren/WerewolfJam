@@ -293,6 +293,11 @@ public class WJChar : MonoBehaviour
         {
             FXInvulnerability.Stop();
         }
+
+        var mats = transform.Find("PersonajeRigeado/Character").GetComponent<Renderer>().materials;
+        for (int i = 0; i < mats.Length; i++)
+            mats[i].color = OGDayColors[i];
+        transform.Find("PersonajeRigeado/Character").GetComponent<Renderer>().materials = mats;
     }
 
     public void ApplyDamage(int _damage)
