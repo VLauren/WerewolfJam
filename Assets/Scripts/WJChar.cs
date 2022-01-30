@@ -231,6 +231,8 @@ public class WJChar : MonoBehaviour
         var fx = WJVisualFX.Effect(2, FXPos, Quaternion.Euler(0, -90, 0) * transform.rotation);
         fx.transform.parent = transform;
 
+        WJRenderCam.CameraShake(0.05f, 0.15f);
+
         yield return new WaitForSeconds(0.1f);
 
         AttackArea.gameObject.SetActive(true);
@@ -253,6 +255,8 @@ public class WJChar : MonoBehaviour
             // Rotacion del personaje
             transform.rotation = Quaternion.LookRotation(DashDirection, Vector3.up);
             NightAnimator.SetTrigger("Dash");
+
+            WJRenderCam.CameraShake(0.15f, 0.15f);
 
             WJGame.AudioSource.SetIntVar("lobo", 4);
             WJGame.AudioSource.Play("lobo");
@@ -304,6 +308,8 @@ public class WJChar : MonoBehaviour
             WJGame.AudioSource.SetIntVar("lobo", 0);
             WJGame.AudioSource.Play("lobo");
         }
+
+        WJRenderCam.CameraShake(0.15f, 0.2f);
     }
 
     public virtual void Death()

@@ -15,6 +15,8 @@ public class WJRenderCam : MonoBehaviour
     public float MaxX;
     public float MinX;
 
+    static Vector3 CameraShakeOffset;
+
     public enum CamType
     {
         RIGHT,
@@ -55,6 +57,27 @@ public class WJRenderCam : MonoBehaviour
             transform.position = new Vector3(MinX, transform.position.y, transform.position.z);
         if (transform.position.x > MaxX)
             transform.position = new Vector3(MaxX, transform.position.y, transform.position.z);
+
+        transform.position += CameraShakeOffset;
+    }
+
+    public static void CameraShake(float _strength, float _time)
+    {
+        Instance.StartCoroutine(Instance.CameraShakeRoutine(_strength, _time));
+    }
+
+    IEnumerator CameraShakeRoutine(float _strength, float _time)
+    {
+        float count = 0;
+        while (count < _time)
+        {
+            float currentStrength = ((_time - count) / _time) * _strength;
+            CameraShakeOffset = currentStrength * Random.onUnitSphere;
+
+            count += Time.unscaledDeltaTime;
+            yield return null;
+        }
+        CameraShakeOffset = Vector3.zero;
     }
 
 }
