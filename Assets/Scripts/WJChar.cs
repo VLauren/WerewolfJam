@@ -88,7 +88,7 @@ public class WJChar : MonoBehaviour
 
     void Walk()
     {
-        if (!Dead && !CanControl) return;
+        if (Dead || !CanControl) return;
         
         controlMovement = Vector3.zero;
         float moveAmount = (WJUtil.IsOnDaySide(transform.position) ? DayMovementSpeed : NightMovementSpeed);
@@ -108,7 +108,7 @@ public class WJChar : MonoBehaviour
 
     void Rotation()
     {
-        if (!Dead && !CanControl) return;
+        if (Dead || !CanControl) return;
         
         float rCam = Camera.main.transform.eulerAngles.y;
         // Direccion relativa a camara
@@ -122,7 +122,7 @@ public class WJChar : MonoBehaviour
 
     void Gravity()
     {
-        if (!Dead && !CanControl) return;
+        if (Dead || !CanControl) return;
 
         if (GetComponent<CharacterController>().isGrounded && VerticalVelocity < 0)
             VerticalVelocity = 0;
@@ -135,7 +135,7 @@ public class WJChar : MonoBehaviour
 
     void Attack()
     {
-        if (!Dead && !CanControl) return;
+        if (Dead || !CanControl) return;
 
         if (AttackTimeRemaining > 0) {
             AttackTimeRemaining -= Time.deltaTime;
