@@ -1,3 +1,4 @@
+using KrillAudio.Krilloud;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -211,10 +212,22 @@ public class WJChar : MonoBehaviour
         if (AttackTimeRemaining > 0) {
             return;
         }
+
+        StartCoroutine(WolfAttack());
+    }
+
+    IEnumerator WolfAttack()
+    {
         AttackTimeRemaining = AttackDuration;
-        AttackArea.gameObject.SetActive(true);
 
         NightAnimator.SetTrigger("Attack");
+
+        WJGame.AudioSource.SetIntVar("lobo", 2);
+        WJGame.AudioSource.Play("lobo");
+
+        yield return new WaitForSeconds(0.2f);
+
+        AttackArea.gameObject.SetActive(true);
     }
 
     void OnDash(InputValue value)
@@ -239,22 +252,26 @@ public class WJChar : MonoBehaviour
     internal void StartInvul()
     {
         Invulnerable = true;
-        if (FXInvulnerability != null) {
+        if (FXInvulnerability != null)
+        {
             FXInvulnerability.Play();
-        } else {
+        }
+        else
+        {
             Debug.Log("No hay partículas de invulnerabilidad");
         }
 
-        // TODO representar visualmente
+        WJGame.AudioSource.SetIntVar("lobo", 3);
+        WJGame.AudioSource.Play("lobo");
     }
 
     internal void StopInvul()
     {
         Invulnerable = false;
-    if (FXInvulnerability != null) {
-                FXInvulnerability.Stop();
+        if (FXInvulnerability != null)
+        {
+            FXInvulnerability.Stop();
         }
-        // TODO representar visualmente
     }
 
     public void ApplyDamage(int _damage)
@@ -267,6 +284,16 @@ public class WJChar : MonoBehaviour
             Death();
 
         BroadcastMessage("Blink", SendMessageOptions.DontRequireReceiver);
+
+        if (WJUtil.IsOnDaySide(transform.position))
+        {
+            WJGame.AudioSource.Play("girl");
+        }
+        else
+        {
+            WJGame.AudioSource.SetIntVar("lobo", 0);
+            WJGame.AudioSource.Play("lobo");
+        }
     }
 
     public virtual void Death()

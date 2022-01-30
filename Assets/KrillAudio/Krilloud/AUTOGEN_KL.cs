@@ -6,10 +6,92 @@ namespace KrillAudio.Krilloud
 	{
 		public class Tags
 		{
+			/// <summary>
+			/// Tag: esqueletos
+			/// 2D
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string esqueletos = "esqueletos";
+
+			/// <summary>
+			/// Tag: girl
+			/// 2D
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string girl = "girl";
+
+			/// <summary>
+			/// Tag: lobo
+			/// 2D
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string lobo = "lobo";
+
+			/// <summary>
+			/// Tag: musica
+			/// 2D
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string musica = "musica";
+
+			/// <summary>
+			/// Tag: pajaro
+			/// 2D
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string pajaro = "pajaro";
+
+			/// <summary>
+			/// Tag: pasos
+			/// 2D
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string pasos = "pasos";
+
 		}
 
 		public class Variables
 		{
+			/// <summary>
+			/// Variable: esqueletos
+			/// Range: [0 - 0]
+			/// Type: Local
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string esqueletos = "esqueletos";
+
+			/// <summary>
+			/// Variable: lobo
+			/// Range: [0 - 0]
+			/// Type: Local
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string lobo = "lobo";
+
+			/// <summary>
+			/// Variable: pasos
+			/// Range: [0 - 0]
+			/// Type: Local
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string pasos = "pasos";
+
+			/// <summary>
+			/// Variable: volmusicadia
+			/// Range: [0 - 0]
+			/// Type: Local
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string volmusicadia = "volmusicadia";
+
+			/// <summary>
+			/// Variable: volumusicanoche
+			/// Range: [0 - 0]
+			/// Type: Local
+			/// </summary>
+			[System.Obsolete("Placeholder")]
+			public const string volumusicanoche = "volumusicanoche";
+
 		}
 
 		public class Channels

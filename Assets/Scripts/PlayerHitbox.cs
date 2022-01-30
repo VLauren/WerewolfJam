@@ -11,6 +11,9 @@ public class PlayerHitbox : MonoBehaviour
         if(other.GetComponent<WJEnemy>() != null)
         {
             other.GetComponent<WJEnemy>().ApplyDamage(Damage);
+
+            WJGame.AudioSource.SetIntVar("lobo", 1);
+            WJGame.AudioSource.Play("lobo");
         }
     }
 }

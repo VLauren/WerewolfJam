@@ -17,10 +17,103 @@ MonoBehaviour:
   buildLogLevel: 2
   m_krilloudInDebugMode: 0
   placeholderContract:
-    tags: []
-    variables: []
+    tags:
+    - girl
+    - pasos
+    - pajaro
+    - esqueletos
+    - musica
+    - lobo
+    variables:
+    - pasos
+    - esqueletos
+    - volumusicanoche
+    - volmusicadia
+    - lobo
   cacheContract:
-    tags: []
-    variables: []
+    tags:
+    - name: girl
+      description: 
+      is3D: 0
+      max3DDistance: 0
+      isLoop: 0
+      channelId: 0
+      sourceContract: 2
+    - name: pasos
+      description: 
+      is3D: 0
+      max3DDistance: 0
+      isLoop: 0
+      channelId: 0
+      sourceContract: 2
+    - name: pajaro
+      description: 
+      is3D: 0
+      max3DDistance: 0
+      isLoop: 0
+      channelId: 0
+      sourceContract: 2
+    - name: esqueletos
+      description: 
+      is3D: 0
+      max3DDistance: 0
+      isLoop: 0
+      channelId: 0
+      sourceContract: 2
+    - name: musica
+      description: 
+      is3D: 0
+      max3DDistance: 0
+      isLoop: 0
+      channelId: 0
+      sourceContract: 2
+    - name: lobo
+      description: 
+      is3D: 0
+      max3DDistance: 0
+      isLoop: 0
+      channelId: 0
+      sourceContract: 2
+    variables:
+    - name: pasos
+      defaultValue: 0
+      isGlobal: 0
+      source: 2
+      content: 0
+      min: 0
+      max: 0
+      sourceContract: 2
+    - name: esqueletos
+      defaultValue: 0
+      isGlobal: 0
+      source: 2
+      content: 0
+      min: 0
+      max: 0
+      sourceContract: 2
+    - name: volumusicanoche
+      defaultValue: 0
+      isGlobal: 0
+      source: 2
+      content: 0
+      min: 0
+      max: 0
+      sourceContract: 2
+    - name: volmusicadia
+      defaultValue: 0
+      isGlobal: 0
+      source: 2
+      content: 0
+      min: 0
+      max: 0
+      sourceContract: 2
+    - name: lobo
+      defaultValue: 0
+      isGlobal: 0
+      source: 2
+      content: 0
+      min: 0
+      max: 0
+      sourceContract: 2
     soundbank_files: []
     channels: []

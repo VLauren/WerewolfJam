@@ -28,6 +28,9 @@ public class RangedEnemy : WJEnemy
         StartCoroutine(Shooting()); // Anyways I started blasting
 
         Anim = transform.Find("EsqueletoRigeado").GetComponent<Animator>();
+
+        WJGame.AudioSource.SetIntVar("esqueletos", 1);
+        WJGame.AudioSource.Play("esqueletos");
     }
 
     void Update()
@@ -95,6 +98,9 @@ public class RangedEnemy : WJEnemy
         Anim.SetTrigger("Attack");
 
         yield return new WaitForSeconds(0.3f);
+
+        WJGame.AudioSource.SetIntVar("esqueletos", 0);
+        WJGame.AudioSource.Play("esqueletos");
 
         Instantiate(Projectile, transform.Find("ProjectileSpawnPoint").position, Quaternion.identity);
     }

@@ -345,7 +345,7 @@ MonoBehaviour:
   GravityAccel: -0.1
   RotationSpeed: 360
   AttackArea: {fileID: 4875948163838336375}
-  AttackDuration: 0.2
+  AttackDuration: 0.35
   AttackTimeRemaining: 0
   DashDuration: 0.5
   DashSpeed: 20
@@ -735,6 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 8498040082387616414, guid: 0addb50f8fa0ba843a5205e303cea640, type: 3}
+  Type: 0
 --- !u!4 &1949691179505947832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66e0c4eaf4377ce418f437fb1867fe04, type: 3}
@@ -1150,6 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 8498040082387616414, guid: 18b9c7ebe6b3b4b4bb66b87780fe14eb, type: 3}
+  Type: 0
 --- !u!1001 &6264308831081178695
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,6 +6,11 @@ public class FlyingEnemy : WJEnemy
 {
     public float MovementSpeed;
 
+    void Start()
+    {
+        WJGame.AudioSource.Play("pajaro");
+    }
+
     void Update()
     {
         if (WJChar.Instance == null)

@@ -1,3 +1,4 @@
+using KrillAudio.Krilloud;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class WJGame : MonoBehaviour
 
     public static Material BMat;
     public Material BlinkMat;
+
+    public static KLAudioSource AudioSource;
     
     [Space()]
     public float InvulTime;
@@ -22,6 +25,8 @@ public class WJGame : MonoBehaviour
         Instance = this;
 
         BMat = BlinkMat;
+
+        AudioSource = GetComponent<KLAudioSource>();
     }
 
     public static void Death()

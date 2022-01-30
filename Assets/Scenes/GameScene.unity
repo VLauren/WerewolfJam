@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 734362304755271844, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3870229963170104692, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
       propertyPath: DashSpeed
       value: 13
@@ -1035,6 +1039,36 @@ Transform:
   m_Father: {fileID: 1504550048}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1984374972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3090092112927868876, guid: 81d9959b6d814a947b5af746aff86ec0, type: 3}
+  m_PrefabInstance: {fileID: 3090092113571756364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1984374973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984374972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca36c690dacad5b449503bd14a590635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceShape: 0
+  sphereShapeRadius: 1
+  lineShapeStart: {x: -0, y: -0, z: -1}
+  lineShapeEnd: {x: 0, y: 0, z: 1}
+  areaShapeSize: {x: 1, y: 1, z: 1}
+  playOnAwake: 0
+  m_tags:
+  - esqueletos
+  - girl
+  - lobo
+  - musica
+  - pajaro
+  - pasos
 --- !u!1 &1995557037
 GameObject:
   m_ObjectHideFlags: 0
