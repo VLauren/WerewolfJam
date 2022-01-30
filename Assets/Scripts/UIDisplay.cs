@@ -21,7 +21,9 @@ public class UIDisplay : MonoBehaviour
         player = WJChar.Instance;
         scoreKeeper = WJScoreKeeper.Instance;
         healthBar.value = player.CurrentHP;
-        invulnerabilityBar.value = WJGame.Instance.InvulGauge;
+
+        invulnerabilityBar.value = WJGame.Instance.InvulGauge * 0.58f;
+
         scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("000");
         kidImage.gameObject.SetActive(true);
         wolfImage.gameObject.SetActive(false);

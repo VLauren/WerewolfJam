@@ -75,6 +75,22 @@ MonoBehaviour:
       channelId: 0
       sourceContract: 2
     variables:
+    - name: pitch
+      defaultValue: 0
+      isGlobal: 0
+      source: 2
+      content: 0
+      min: -6
+      max: 6
+      sourceContract: 2
+    - name: volmusicanoche
+      defaultValue: 0.7
+      isGlobal: 0
+      source: 2
+      content: 0
+      min: 0
+      max: 1
+      sourceContract: 2
     - name: pasos
       defaultValue: 0
       isGlobal: 0

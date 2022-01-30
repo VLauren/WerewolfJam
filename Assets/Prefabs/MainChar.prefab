@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 8498040082387616414, guid: 18b9c7ebe6b3b4b4bb66b87780fe14eb, type: 3}
-  Type: 0
+  Type: 1
 --- !u!1001 &6264308831081178695
 PrefabInstance:
   m_ObjectHideFlags: 0
