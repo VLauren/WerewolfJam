@@ -3,12 +3,22 @@ guid: 3ef63345a3dece6418c1668c10e445de
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hojas
+    second: {fileID: 2100000, guid: 74febac517cb0ea449e8c4251a54d0ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pinchos
+    second: {fileID: 2100000, guid: b5f2c1c653e5df945a26ab638c61e578, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

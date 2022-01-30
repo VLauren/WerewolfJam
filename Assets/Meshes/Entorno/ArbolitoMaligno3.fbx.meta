@@ -3,12 +3,27 @@ guid: ad830dc43a64bfd47b316d8e1fccb807
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_BlancoOjos
+    second: {fileID: 2100000, guid: eb018e0f9f264964f87b89329e499038, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_OjosArbol
+    second: {fileID: 2100000, guid: fb4d9992ad655eb42a9b182f5bbd37f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tronco
+    second: {fileID: 2100000, guid: 5d98c788f096e014cb9fe46e9fb484a8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
