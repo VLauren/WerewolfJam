@@ -263,6 +263,12 @@ public class WJChar : MonoBehaviour
         }
     }
 
+    void OnStartButton(InputValue value)
+    {
+        Debug.Log("Load Menu");
+        SceneManager.LoadScene(0);
+    }
+
     internal void StartInvul()
     {
         Invulnerable = true;
