@@ -12,6 +12,9 @@ public class WJGame : MonoBehaviour
     public Material BlinkMat;
 
     public static KLAudioSource AudioSource;
+
+    public static float LinePos { get; private set; }
+    public static bool InverseLine { get; private set; }
     
     [Space()]
     public float InvulTime;
@@ -20,6 +23,66 @@ public class WJGame : MonoBehaviour
 
     bool InvulActive;
 
+    [Space()]
+    public float LineOscSpeed;
+    public float LineOscSpeedDay;
+    public float LineOscSpeedNight;
+    public bool ForceLineVal;
+    [Range(0, 1)]
+    public float ForcedLinePos;
+    public bool ForceLineInverse;
+
+    float LineTime = 0;
+
+    void Update()
+    {
+        if (ForceLineVal)
+        {
+            LinePos = ForcedLinePos;
+            InverseLine = ForceLineInverse;
+        }
+        else
+        {
+            if (WJUtil.IsOnDaySide(WJChar.Instance.transform.position))
+                LineTime += Time.deltaTime * LineOscSpeedDay;
+            else
+                LineTime += Time.deltaTime * LineOscSpeedNight;
+
+            if(!InverseLine)
+            {
+                // LinePos = Mathf.Abs(Mathf.Sin(LineTime * Mathf.PI * LineOscSpeed));
+                LinePos = (1 - Mathf.Cos(LineTime * Mathf.PI * LineOscSpeed)) / 2;
+                Debug.Log((LineTime * LineOscSpeed) + " - " + LineTime + " - " + LinePos);
+
+                if((LineTime * LineOscSpeed) > 1f)
+                {
+                    InverseLine = true;
+                    LineTime = 0;
+                    LinePos = (1 - Mathf.Cos(LineTime * Mathf.PI * LineOscSpeed)) / 2;
+                }
+
+                WJGame.AudioSource.SetFloatVar("volmusicadia", Mathf.Clamp((LinePos - 1f/3) * 3, 0.0f, 1.0f));
+                WJGame.AudioSource.SetFloatVar("volmusicanoche", Mathf.Clamp(((1 - LinePos) - 1f / 3) * 3, 0.0f, 1.0f));
+            }
+            else
+            {
+                // LinePos = Mathf.Abs(Mathf.Sin(LineTime * Mathf.PI * LineOscSpeed));
+                LinePos = (1 - Mathf.Cos(LineTime * Mathf.PI * LineOscSpeed)) / 2;
+                Debug.Log((LineTime * LineOscSpeed) + " - " + LineTime + " - " + LinePos);
+
+                if((LineTime * LineOscSpeed) > 1f)
+                {
+                    InverseLine = false;
+                    LineTime = 0;
+                    LinePos = (1 - Mathf.Cos(LineTime * Mathf.PI * LineOscSpeed)) / 2;
+                }
+
+                WJGame.AudioSource.SetFloatVar("volmusicanoche", Mathf.Clamp((LinePos - 1f/3) * 3, 0.0f, 1.0f));
+                WJGame.AudioSource.SetFloatVar("volmusicadia", Mathf.Clamp(((1 - LinePos) - 1f / 3) * 3, 0.0f, 1.0f));
+            }
+        }
+    }
+
     void Awake()
     {
         Instance = this;
@@ -27,6 +90,11 @@ public class WJGame : MonoBehaviour
         BMat = BlinkMat;
 
         AudioSource = GetComponent<KLAudioSource>();
+    }
+
+    private void Start()
+    {
+        WJGame.AudioSource.Play("musica");
     }
 
     public static void Death()

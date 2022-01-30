@@ -49,6 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkMat: {fileID: 2100000, guid: a655ccc5bf6598e449272a125dca6511, type: 2}
   InvulTime: 8
+  LineOscSpeed: 0.15
+  LineOscSpeedDay: 1.5
+  LineOscSpeedNight: 1
+  ForceLineVal: 0
+  ForcedLinePos: 0.5
+  ForceLineInverse: 0
 --- !u!114 &2195659588191323146
 MonoBehaviour:
   m_ObjectHideFlags: 0

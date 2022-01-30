@@ -29,16 +29,18 @@ public class WJMask : MonoBehaviour
         child2.parent = child2.parent.parent;
 
         float xScale;
-        if (Type == MaskType.RIGHT)
-            xScale = -1 + Mathf.Abs(Mathf.Sin(Time.time * Mathf.PI * OscSpeed));
+
+        if (Type == MaskType.RIGHT && !WJGame.InverseLine || Type == MaskType.LEFT && WJGame.InverseLine)
+            xScale = -1 + WJGame.LinePos;
         else
-            xScale = - Mathf.Abs(Mathf.Sin(Time.time * Mathf.PI * OscSpeed));
+            xScale = - WJGame.LinePos;
 
         Rect r = GetComponent<RectTransform>().rect;
 
         GetComponent<RectTransform>().sizeDelta = new Vector2(xScale * StartWidth, 0);
 
-        if (Type == MaskType.RIGHT)
+        // if (Type == MaskType.RIGHT)
+        if (Type == MaskType.RIGHT && !WJGame.InverseLine || Type == MaskType.LEFT && WJGame.InverseLine)
             GetComponent<RectTransform>().anchoredPosition = new Vector2(- xScale * StartWidth / 2, 0);
         else
             GetComponent<RectTransform>().anchoredPosition = new Vector2(xScale * StartWidth / 2, 0);

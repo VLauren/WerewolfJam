@@ -7,7 +7,7 @@ public static class WJUtil
 
     public static float OscValue()
     {
-        return Mathf.Abs(Mathf.Sin(Time.time * Mathf.PI * WJRenderCam.OscSpeed));
+        return WJGame.LinePos;
     }
 
     public static bool IsOnDaySide(Vector3 _worldPosition)
@@ -20,6 +20,7 @@ public static class WJUtil
 
         Plane plane = new Plane(dir, WJRenderCam.Instance.transform.position);
 
-        return !plane.GetSide(_worldPosition);
+
+        return WJGame.InverseLine ? plane.GetSide(_worldPosition) : !plane.GetSide(_worldPosition);
     }
 }
