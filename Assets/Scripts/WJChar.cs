@@ -46,6 +46,7 @@ public class WJChar : MonoBehaviour
     bool CanDash;
     float DashTimeRemaining;
     float DashCooldownTimeRemaining;
+    Vector3 DashDirection;
 
     protected Color[] OGDayColors;
     float colorOsc;
@@ -145,19 +146,31 @@ public class WJChar : MonoBehaviour
 
     void Dash()
     {
-        if (DashTimeRemaining > 0) {
+        if (DashTimeRemaining > 0)
+        {
             DashTimeRemaining -= Time.deltaTime;
-        } else if (!CanControl) {
+
+            GetComponent<CharacterController>().Move(moveInput * DashSpeed * Time.deltaTime);
+
+        }
+        else if (!CanControl)
+        {
             DashTimeRemaining = 0f;
             DashCooldownTimeRemaining = DashCooldown;
             CanControl = true;
             CanDash = false;
+
+            NightAnimator.SetTrigger("EndDash");
+
             Debug.Log("Can control again");
         }
 
-        if (DashCooldownTimeRemaining > 0) {
+        if (DashCooldownTimeRemaining > 0)
+        {
             DashCooldownTimeRemaining -= Time.deltaTime;
-        } else if (!CanDash) {
+        }
+        else if (!CanDash)
+        {
             DashCooldownTimeRemaining = 0f;
             CanDash = true;
             Debug.Log("Can dash again");
@@ -210,10 +223,16 @@ public class WJChar : MonoBehaviour
         {
             return;
         }
-        if (CanControl && CanDash) {
-            Debug.Log("Dash!!!");
+        if (CanControl && CanDash)
+        {
+            Debug.Log("Dash!!! " + moveInput);
+            DashDirection = moveInput;
             DashTimeRemaining = DashDuration;
             CanControl = false;
+
+            // Rotacion del personaje
+            transform.rotation = Quaternion.LookRotation(DashDirection, Vector3.up);
+            NightAnimator.SetTrigger("Dash");
         }
     }
 

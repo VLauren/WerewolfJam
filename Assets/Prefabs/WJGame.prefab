@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3090092112927868877}
   - component: {fileID: 2195659588191323146}
   - component: {fileID: 587243872544566457}
+  - component: {fileID: 8980034945786994923}
   m_Layer: 0
   m_Name: WJGame
   m_TagString: Untagged
@@ -60,7 +61,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b48afd8914022245954bfdb59cbc061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EffectsPrefabs: []
+  EffectsPrefabs:
+  - {fileID: 1078506033425764242, guid: 8fb58f9d92bf96a4981e0116c2921579, type: 3}
+  - {fileID: 1078506033425764242, guid: 116f9203c0bb32c46acf0004e3b88288, type: 3}
 --- !u!114 &587243872544566457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,3 +76,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfeb47904036c14f9ea690443079d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8980034945786994923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090092112927868876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924c28eb919bc86458da37daeef9e740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangedEnemy: {fileID: 67456953376424206, guid: 870c3b19264826343a5aca17990534d0, type: 3}
+  FlyingEnemy: {fileID: 4307638679553854214, guid: 2ee505906691cb64ea64bfd9fbf7f112, type: 3}
+  xDist: 22.72
+  zDist: 8
+  WaitTime: 5
+  WaitTimeReductionSpeed: 0.03

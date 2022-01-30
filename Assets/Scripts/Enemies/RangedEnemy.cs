@@ -85,7 +85,7 @@ public class RangedEnemy : WJEnemy
     {
         while(true)
         {
-            yield return new WaitForSeconds(1.0f / FireRate);
+            yield return new WaitForSeconds((0.9f + Random.value * 0.2f) / FireRate);
             StartCoroutine(Shoot());
         }
     }
