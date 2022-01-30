@@ -22,7 +22,7 @@ public class UIDisplay : MonoBehaviour
         scoreKeeper = WJScoreKeeper.Instance;
         healthBar.value = player.CurrentHP;
         invulnerabilityBar.value = WJGame.Instance.InvulGauge;
-        scoreText.text = "Puntos: " + scoreKeeper.GetScore().ToString("000000000");
+        scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("000");
         kidImage.gameObject.SetActive(true);
         wolfImage.gameObject.SetActive(false);
     }
@@ -31,7 +31,7 @@ public class UIDisplay : MonoBehaviour
     {
         healthBar.value = player.CurrentHP;
         invulnerabilityBar.value = WJGame.Instance.InvulGauge;
-        scoreText.text = "Puntos: " + scoreKeeper.GetScore().ToString("000000000");
+        scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("000");
         if (WJUtil.IsOnDaySide(WJChar.Instance.transform.position)) {
             kidImage.gameObject.SetActive(true);
             wolfImage.gameObject.SetActive(false);

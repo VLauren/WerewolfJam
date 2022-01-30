@@ -293,7 +293,11 @@ public class WJChar : MonoBehaviour
         if (Invulnerable || Dead)
             return;
 
-        CurrentHP -= _damage;
+        if (WJUtil.IsOnDaySide(transform.position))
+            CurrentHP -= _damage;
+        else
+            CurrentHP -= _damage / 2;
+
         if (CurrentHP <= 0)
             Death();
 
