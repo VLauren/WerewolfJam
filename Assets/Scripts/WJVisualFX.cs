@@ -14,13 +14,16 @@ public class WJVisualFX : MonoBehaviour
     }
 
 
-    public static void Effect(int _index, Vector3 _position, Quaternion _rotation = new Quaternion())
+    public static GameObject Effect(int _index, Vector3 _position, Quaternion _rotation = new Quaternion())
     {
         if (Instance.EffectsPrefabs.Count > _index)
         {
-            Instantiate(Instance.EffectsPrefabs[_index], _position, _rotation);
+            return Instantiate(Instance.EffectsPrefabs[_index], _position, _rotation);
         }
         else
+        {
             Debug.Log("No existe el efecto " + _index);
+            return null;
+        }
     }
 }

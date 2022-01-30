@@ -225,7 +225,13 @@ public class WJChar : MonoBehaviour
         WJGame.AudioSource.SetIntVar("lobo", 2);
         WJGame.AudioSource.Play("lobo");
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
+
+        Vector3 FXPos = transform.Find("AtkFXPos").position;
+        var fx = WJVisualFX.Effect(2, FXPos, Quaternion.Euler(0, -90, 0) * transform.rotation);
+        fx.transform.parent = transform;
+
+        yield return new WaitForSeconds(0.1f);
 
         AttackArea.gameObject.SetActive(true);
     }
@@ -238,7 +244,8 @@ public class WJChar : MonoBehaviour
         }
         if (CanControl && CanDash)
         {
-            Debug.Log("Dash!!! " + moveInput);
+            // Inicio de dash
+
             DashDirection = moveInput;
             DashTimeRemaining = DashDuration;
             CanControl = false;
@@ -246,6 +253,9 @@ public class WJChar : MonoBehaviour
             // Rotacion del personaje
             transform.rotation = Quaternion.LookRotation(DashDirection, Vector3.up);
             NightAnimator.SetTrigger("Dash");
+
+            WJGame.AudioSource.SetIntVar("lobo", 4);
+            WJGame.AudioSource.Play("lobo");
         }
     }
 

@@ -26,7 +26,7 @@ public class WJEnemy : MonoBehaviour
         if (CurrentHP <= 0)
             Death();
 
-        SendMessage("Blink");
+        BroadcastMessage("Blink", SendMessageOptions.DontRequireReceiver);
     }
 
     public virtual void Death()

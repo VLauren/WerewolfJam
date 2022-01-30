@@ -134,18 +134,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3870229963170104692, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
-      propertyPath: DashSpeed
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3870229963170104692, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
-      propertyPath: DashCooldown
-      value: 0.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 3870229963170104692, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
-      propertyPath: DashDuration
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 3870229963170104693, guid: 4892006463c654249a7b5f23e013e4d3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -508,7 +496,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51676
+  m_Name: pb_Mesh24724
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -70,6 +70,8 @@ MonoBehaviour:
   EffectsPrefabs:
   - {fileID: 1078506033425764242, guid: 8fb58f9d92bf96a4981e0116c2921579, type: 3}
   - {fileID: 1078506033425764242, guid: 116f9203c0bb32c46acf0004e3b88288, type: 3}
+  - {fileID: 9031346292365574828, guid: 7679b57477f1ce64ebcb75a299b2d183, type: 3}
+  - {fileID: 3389064388641629362, guid: 4f780e68bdad2c245a1de798f3f2987e, type: 3}
 --- !u!114 &587243872544566457
 MonoBehaviour:
   m_ObjectHideFlags: 0

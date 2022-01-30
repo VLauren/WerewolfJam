@@ -12,6 +12,8 @@ public class PlayerHitbox : MonoBehaviour
         {
             other.GetComponent<WJEnemy>().ApplyDamage(Damage);
 
+            WJVisualFX.Effect(3, transform.position);
+
             WJGame.AudioSource.SetIntVar("lobo", 1);
             WJGame.AudioSource.Play("lobo");
         }

@@ -43,7 +43,7 @@ public class WJGame : MonoBehaviour
         }
         else
         {
-            if (WJUtil.IsOnDaySide(WJChar.Instance.transform.position))
+            if (WJChar.Instance != null && WJUtil.IsOnDaySide(WJChar.Instance.transform.position))
                 LineTime += Time.deltaTime * LineOscSpeedDay;
             else
                 LineTime += Time.deltaTime * LineOscSpeedNight;
@@ -52,7 +52,6 @@ public class WJGame : MonoBehaviour
             {
                 // LinePos = Mathf.Abs(Mathf.Sin(LineTime * Mathf.PI * LineOscSpeed));
                 LinePos = (1 - Mathf.Cos(LineTime * Mathf.PI * LineOscSpeed)) / 2;
-                Debug.Log((LineTime * LineOscSpeed) + " - " + LineTime + " - " + LinePos);
 
                 if((LineTime * LineOscSpeed) > 1f)
                 {
@@ -68,7 +67,6 @@ public class WJGame : MonoBehaviour
             {
                 // LinePos = Mathf.Abs(Mathf.Sin(LineTime * Mathf.PI * LineOscSpeed));
                 LinePos = (1 - Mathf.Cos(LineTime * Mathf.PI * LineOscSpeed)) / 2;
-                Debug.Log((LineTime * LineOscSpeed) + " - " + LineTime + " - " + LinePos);
 
                 if((LineTime * LineOscSpeed) > 1f)
                 {

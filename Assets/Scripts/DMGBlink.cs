@@ -13,6 +13,7 @@ public class DMGBlink : MonoBehaviour
 
     public void Blink()
     {
+        Debug.Log("BLINK " + gameObject.name);
         StartCoroutine(DBlink());
     }
 
@@ -25,8 +26,21 @@ public class DMGBlink : MonoBehaviour
 
         yield return null;
         yield return null;
+
+        GetComponent<Renderer>().materials = OGMats;
+
+        yield return null;
+        yield return null;
+
+        mats = GetComponent<Renderer>().materials;
+        for (int i = 0; i < mats.Length; i++)
+            mats[i] = WJGame.BMat;
+        GetComponent<Renderer>().materials = mats;
+
+        yield return null;
         yield return null;
 
         GetComponent<Renderer>().materials = OGMats;
+
     }
 }
