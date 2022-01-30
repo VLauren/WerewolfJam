@@ -111,4 +111,9 @@ public class RangedEnemy : WJEnemy
 
         Destroy(gameObject);
     }
+
+    public void Victory()
+    {
+        Anim.SetTrigger("Victory");
+    }
 }

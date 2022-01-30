@@ -315,6 +315,11 @@ public class WJChar : MonoBehaviour
     public virtual void Death()
     {
         WJGame.Death();
+
+        // CanControl = false;
+        // DayAnimator.SetTrigger("Death");
+        // NightAnimator.SetTrigger("Death");
+
         Destroy(gameObject);
     }
 }
