@@ -559,7 +559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PULSA CUALQUIER TECLA
+  m_text: PRESS ANY KEY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2406e18bf73802f40b59e88bd89877df, type: 2}
   m_sharedMaterial: {fileID: -1106678167522208036, guid: 2406e18bf73802f40b59e88bd89877df, type: 2}
@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PULSA CUALQUIER TECLA
+  m_text: PRESS ANY KEY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2406e18bf73802f40b59e88bd89877df, type: 2}
   m_sharedMaterial: {fileID: -1106678167522208036, guid: 2406e18bf73802f40b59e88bd89877df, type: 2}
@@ -1979,7 +1979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ULTRA TEAM
+  m_text: ULTRA TEAM - AUDIO BY  KRILLAUDIO
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
