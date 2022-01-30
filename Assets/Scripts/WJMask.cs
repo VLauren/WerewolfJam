@@ -23,6 +23,8 @@ public class WJMask : MonoBehaviour
 
     void Update()
     {
+        StartWidth = Screen.width;
+
         var child1 = GetComponent<RectTransform>().GetChild(1);
         var child2 = GetComponent<RectTransform>().GetChild(0);
         child1.parent = child1.parent.parent;
